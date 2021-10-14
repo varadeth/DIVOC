@@ -206,9 +206,7 @@ function FacilityController() {
                         }
                         if(status === CONSTANTS.IN_ACTIVE) {
                             const program = item["programs"].find(program => program.name === selectedProgram)
-                            if (program && program.status === CONSTANTS.IN_ACTIVE) {
-                                isFiltersMatched = true
-                            } else {
+                            if (!(program && program.status === CONSTANTS.IN_ACTIVE)) {
                                 isFiltersMatched = !program && isFiltersMatched;
                             }
                         }
