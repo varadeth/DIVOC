@@ -18,28 +18,31 @@ const formatId = (identity) => {
   const split = identity.split(":");
   const lastFragment = split[split.length - 1];
   if (identity.includes("aadhaar") && lastFragment.length >= 4) {
-    return "Aadhaar # XXXX XXXX XXXX " + lastFragment.substr(lastFragment.length - 4)
+    return "Aadhaar # XXXX XXXX XXXX " + lastFragment.substr(lastFragment.length - 4);
   }
   if (identity.includes("Driving")) {
-    return "Driver’s License # " + lastFragment
+    return "Driver’s License # " + lastFragment;
   }
   if (identity.includes("MNREGA")) {
-    return "MNREGA Job Card # " + lastFragment
+    return "MNREGA Job Card # " + lastFragment;
   }
   if (identity.includes("PAN")) {
-    return "PAN Card # " + lastFragment
+    return "PAN Card # " + lastFragment;
   }
   if (identity.includes("Passbooks")) {
-    return "Passbook # " + lastFragment
+    return "Passbook # " + lastFragment;
   }
   if (identity.includes("Passport")) {
-    return "Passport # " + lastFragment
+    return "Passport # " + lastFragment;
   }
   if (identity.includes("Pension")) {
-    return "Pension Document # " + lastFragment
+    return "Pension Document # " + lastFragment;
   }
   if (identity.includes("Voter")) {
-    return "Voter ID # " + lastFragment
+    return "Voter ID # " + lastFragment;
+  }
+  if (identity.includes("mosip")) {
+    return "MOSIP # " + lastFragment;
   }
   return lastFragment
 }
